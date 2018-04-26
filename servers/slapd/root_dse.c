@@ -381,14 +381,14 @@ fail:
 	val.bv_len = strlen( val.bv_val );
 	if( attr_merge( e, ad_dnshostname, &val, NULL) ) { goto fail; }
 
-	char *supportedCapabilities[6] = [
+	const char *supportedCapabilities[6] = {
         '1.2.840.113556.1.4.800',
         '1.2.840.113556.1.4.1670',
         '1.2.840.113556.1.4.1791',
         '1.2.840.113556.1.4.1935',
         '1.2.840.113556.1.4.2080',
         '1.2.840.113556.1.4.2237'
-  ];
+	};
 	for ( i=0; i<6; i++ ) {
 		val.bv_val = supportedCapabilities[i];
 		val.bv_len = strlen( val.bv_val );
