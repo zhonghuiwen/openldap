@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "queue": "c",
-    "stack": "c"
+    "stack": "c",
+    "iosfwd": "c"
   }
 }
