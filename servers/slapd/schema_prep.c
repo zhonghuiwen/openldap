@@ -745,7 +745,7 @@ static struct slap_schema_ad_map {
 		rootDseAttribute, 0,
 		NULL, NULL,
 		NULL, NULL, NULL, NULL, NULL,
-		offsetof(struct slap_internal_schema, si_ad_supportedcapabilities) },
+		offsetof(struct slap_internal_schema, si_ad_domaincontrollerfunctionality) },
 	{ "'msDS-PortLDAP", "( 1.2.840.113556.1.4.224 "
 			"NAME ''msDS-PortLDAP' "
 			"DESC 'AD Port LDAP '"
