@@ -939,6 +939,11 @@ struct slap_internal_schema {
 	AttributeDescription *si_ad_vendorName;
 	AttributeDescription *si_ad_vendorVersion;
 	AttributeDescription *si_ad_configContext;
+	AttributeDescription *si_ad_dnshostname;
+	AttributeDescription *si_ad_supportedcapabilities;
+	AttributeDescription *si_ad_domaincontrollerfunctionality;
+	AttributeDescription *si_ad_msds_portldap;
+	AttributeDescription *si_ad_msds_portssl;
 
 	/* subentry attribute descriptions */
 	AttributeDescription *si_ad_administrativeRole;

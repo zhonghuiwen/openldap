@@ -722,6 +722,46 @@ static struct slap_schema_ad_map {
 		NULL, NULL,
 		NULL, NULL, NULL, NULL, NULL,
 		offsetof(struct slap_internal_schema, si_ad_vendorVersion) },
+	{ "dnsHostName", "( 1.2.840.113556.1.4.221 "
+			"NAME 'dnsHostName' "
+			"DESC 'AD DNS Host Name'"
+			"SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE dSAOperation )",
+		rootDseAttribute, 0,
+		NULL, NULL,
+		NULL, NULL, NULL, NULL, NULL,
+		offsetof(struct slap_internal_schema, si_ad_dnshostname) },
+	{ "supportedCapabilities", "( 1.2.840.113556.1.4.222 "
+			"NAME 'supportedCapabilities' "
+			"DESC 'AD Supported Capabilities '"
+			"SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE dSAOperation )",
+		rootDseAttribute, 0,
+		NULL, NULL,
+		NULL, NULL, NULL, NULL, NULL,
+		offsetof(struct slap_internal_schema, si_ad_supportedcapabilities) },
+	{ "domainControllerFunctionality", "( 1.2.840.113556.1.4.223 "
+			"NAME 'domainControllerFunctionality' "
+			"DESC 'AD Domain Controller Functionality '"
+			"SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE dSAOperation )",
+		rootDseAttribute, 0,
+		NULL, NULL,
+		NULL, NULL, NULL, NULL, NULL,
+		offsetof(struct slap_internal_schema, si_ad_supportedcapabilities) },
+	{ "'msDS-PortLDAP", "( 1.2.840.113556.1.4.224 "
+			"NAME ''msDS-PortLDAP' "
+			"DESC 'AD Port LDAP '"
+			"SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE dSAOperation )",
+		rootDseAttribute, 0,
+		NULL, NULL,
+		NULL, NULL, NULL, NULL, NULL,
+		offsetof(struct slap_internal_schema, si_ad_msds_portldap) },
+	{ "'msDS-PortSSL", "( 1.2.840.113556.1.4.224 "
+			"NAME ''msDS-PortSSL' "
+			"DESC 'AD Port SSL '"
+			"SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE dSAOperation )",
+		rootDseAttribute, 0,
+		NULL, NULL,
+		NULL, NULL, NULL, NULL, NULL,
+		offsetof(struct slap_internal_schema, si_ad_msds_portssl) },
 
 	/* subentry attributes */
 	{ "administrativeRole", "( 2.5.18.5 NAME 'administrativeRole' "

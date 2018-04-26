@@ -370,6 +370,43 @@ fail:
 		}
 	}
 
+	/* faking AD */
+	AttributeDescription *ad_dnshostname = slap_schema.si_ad_dnshostname;
+	AttributeDescription *ad_supportedCapabilities = slap_schema.si_ad_supportedcapabilities;
+	AttributeDescription *ad_domainControllerFunctionality = slap_schema.si_ad_domaincontrollerfunctionality;
+	AttributeDescription *ad_msDSPortLdap = slap_schema.si_ad_msds_portldap;
+	AttributeDescription *ad_msDSPortSSL = slap_schema.si_ad_msds_portssl;
+	
+	val.bv_val = "huiwens-mbp.univac.com.sg";
+	val.bv_len = strlen( val.bv_val );
+	if( attr_merge( e, ad_dnshostname, &val, NULL) ) { goto fail; }
+
+	string supportedCapabilities[6] = [
+        '1.2.840.113556.1.4.800',
+        '1.2.840.113556.1.4.1670',
+        '1.2.840.113556.1.4.1791',
+        '1.2.840.113556.1.4.1935',
+        '1.2.840.113556.1.4.2080',
+        '1.2.840.113556.1.4.2237'
+  ];
+	for ( i=0; i<6; i++ ) {
+		val.bv_val = supportedCapabilities[i];
+		val.bv_len = strlen( val.bv_val );
+		if( attr_merge( e, ad_supportedCapabilities, &val, NULL) ) { goto fail; }
+	}
+	
+	val.bv_val = "7";
+	val.bv_len = strlen( val.bv_val );
+	if( attr_merge( e, ad_domainControllerFunctionality, &val, NULL) ) { goto fail; }	
+
+	val.bv_val = "389";
+	val.bv_len = strlen( val.bv_val );
+	if( attr_merge( e, ad_msDSPortLdap, &val, NULL) ) { goto fail; }	
+
+	val.bv_val = "636";
+	val.bv_len = strlen( val.bv_val );
+	if( attr_merge( e, ad_msDSPortSSL, &val, NULL) ) { goto fail; }	
+
 	*entry = e;
 	return LDAP_SUCCESS;
 }
