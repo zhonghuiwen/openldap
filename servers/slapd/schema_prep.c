@@ -747,7 +747,7 @@ static struct slap_schema_ad_map {
 		NULL, NULL, NULL, NULL, NULL,
 		offsetof(struct slap_internal_schema, si_ad_domaincontrollerfunctionality) },
 	{ "'msDS-PortLDAP", "( 1.2.840.113556.1.4.224 "
-			"NAME ''msDS-PortLDAP' "
+			"NAME 'msDS-PortLDAP' "
 			"DESC 'AD Port LDAP '"
 			"SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE dSAOperation )",
 		rootDseAttribute, 0,
@@ -755,7 +755,7 @@ static struct slap_schema_ad_map {
 		NULL, NULL, NULL, NULL, NULL,
 		offsetof(struct slap_internal_schema, si_ad_msds_portldap) },
 	{ "'msDS-PortSSL", "( 1.2.840.113556.1.4.224 "
-			"NAME ''msDS-PortSSL' "
+			"NAME 'msDS-PortSSL' "
 			"DESC 'AD Port SSL '"
 			"SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE dSAOperation )",
 		rootDseAttribute, 0,
