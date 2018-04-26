@@ -23,7 +23,7 @@
 #include "slap.h"
 #include <ldif.h>
 #include "lber_pvt.h"
-#include <string>
+#include <string.h>
 
 #ifdef LDAP_SLAPI
 #include "slapi/slapi.h"
