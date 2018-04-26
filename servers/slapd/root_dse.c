@@ -23,7 +23,6 @@
 #include "slap.h"
 #include <ldif.h>
 #include "lber_pvt.h"
-#include <string.h>
 
 #ifdef LDAP_SLAPI
 #include "slapi/slapi.h"
@@ -382,7 +381,7 @@ fail:
 	val.bv_len = strlen( val.bv_val );
 	if( attr_merge( e, ad_dnshostname, &val, NULL) ) { goto fail; }
 
-	string supportedCapabilities[6] = [
+	char *supportedCapabilities[6] = [
         '1.2.840.113556.1.4.800',
         '1.2.840.113556.1.4.1670',
         '1.2.840.113556.1.4.1791',
