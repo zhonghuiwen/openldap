@@ -390,7 +390,7 @@ fail:
         '1.2.840.113556.1.4.2237'
 	};
 	for ( i=0; i<6; i++ ) {
-		val.bv_val = supportedCapabilities[i];
+		val.bv_val = &supportedCapabilities[i];
 		val.bv_len = strlen( val.bv_val );
 		if( attr_merge( e, ad_supportedCapabilities, &val, NULL) ) { goto fail; }
 	}
